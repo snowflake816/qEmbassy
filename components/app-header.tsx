@@ -1,6 +1,6 @@
 "use client"
 
-import { LogOut, User, Menu } from "lucide-react"
+import { LogOut, User, Menu, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -24,6 +24,12 @@ export function AppHeader({ userAddress, onMenuClick }: AppHeaderProps) {
   const handleLogout = () => {
     logout()
     router.push("/")
+  }
+
+  const handleViewInExplorer = () => {
+    if (userAddress) {
+      window.open(`https://explorer.qubic.org/network/address/${userAddress}`, "_blank")
+    }
   }
 
   return (
@@ -54,9 +60,20 @@ export function AppHeader({ userAddress, onMenuClick }: AppHeaderProps) {
               <div className="flex flex-col space-y-1">
                 <p className="text-sm font-medium">Account</p>
                 {userAddress && (
-                  <p className="text-xs text-muted-foreground font-mono">
-                    {userAddress.slice(0, 8)}...{userAddress.slice(-6)}
-                  </p>
+                  <div className="w-full flex items-center gap-2">
+                    <p className="text-xs text-muted-foreground font-mono">
+                      {userAddress.slice(0, 12)}...{userAddress.slice(-8)}
+                    </p>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="h-5 w-5 p-2 hover:bg-accent"
+                      onClick={handleViewInExplorer}
+                      title="View in Qubic Explorer"
+                    >
+                      <ExternalLink className="h-3 w-3" />
+                    </Button>
+                  </div>
                 )}
               </div>
             </DropdownMenuLabel>

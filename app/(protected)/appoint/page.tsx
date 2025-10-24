@@ -3,27 +3,17 @@
 import type React from "react"
 
 import { useState } from "react"
-<<<<<<< HEAD
-=======
 import { useRouter } from "next/navigation"
->>>>>>> 3ccef14 (update view profile)
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-<<<<<<< HEAD
-import { UserPlus, CheckCircle } from "lucide-react"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-
-export default function AppointPage() {
-=======
 import { UserPlus, CheckCircle, ArrowLeft } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
 export default function AppointPage() {
   const router = useRouter()
->>>>>>> 3ccef14 (update view profile)
   const [walletAddress, setWalletAddress] = useState("")
   const [name, setName] = useState("")
   const [country, setCountry] = useState("")
@@ -48,13 +38,10 @@ export default function AppointPage() {
     <div className="flex flex-col gap-6 p-6">
       {/* Header */}
       <div className="flex flex-col gap-2">
-<<<<<<< HEAD
-=======
         <Button variant="ghost" onClick={() => router.back()} className="w-fit -ml-2 mb-2">
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back
         </Button>
->>>>>>> 3ccef14 (update view profile)
         <h1 className="text-3xl font-bold text-balance">Appoint Ambassador</h1>
         <p className="text-muted-foreground">Nominate a new member to join the Qubic ambassador program</p>
       </div>

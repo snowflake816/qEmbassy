@@ -16,10 +16,7 @@ export default function ProtectedLayout({
   const router = useRouter()
   const [profile, setProfile] = useState<UserProfile | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-<<<<<<< HEAD
-=======
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
->>>>>>> 3ccef14 (update view profile)
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -54,11 +51,6 @@ export default function ProtectedLayout({
 
   return (
     <div className="min-h-screen flex flex-col">
-<<<<<<< HEAD
-      <AppHeader userAddress={profile?.address} />
-      <div className="flex flex-1">
-        <AppSidebar userRole={profile?.role} className="hidden md:flex" />
-=======
       <AppHeader userAddress={profile?.address} onMenuClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} />
       <div className="flex flex-1 relative">
         {/* Desktop sidebar - hidden on mobile */}
@@ -75,7 +67,6 @@ export default function ProtectedLayout({
           </>
         )}
 
->>>>>>> 3ccef14 (update view profile)
         <main className="flex-1 overflow-auto">{children}</main>
       </div>
     </div>

@@ -23,20 +23,6 @@ const navItems: NavItem[] = [
 interface AppSidebarProps {
   userRole?: string
   className?: string
-<<<<<<< HEAD
-}
-
-export function AppSidebar({ userRole = "ambassador", className }: AppSidebarProps) {
-  const pathname = usePathname()
-
-  // const filteredNavItems = navItems.filter(
-  //   (item) => !item.roles || item.roles.includes(userRole)
-  // )
-
-  return (
-    <aside className={cn("w-64 border-r border-border/40 glass", className)}>
-      <nav className="w-full flex flex-col gap-2 p-4">
-=======
   onNavigate?: () => void
 }
 
@@ -48,7 +34,6 @@ export function AppSidebar({ userRole = "ambassador", className, onNavigate }: A
   return (
     <aside className={cn("w-64 border-r border-border/40 glass", className)}>
       <nav className="w-full bg-background flex h-full flex-col gap-2 p-4">
->>>>>>> 3ccef14 (update view profile)
         {navItems.map((item) => {
           const Icon = item.icon
           const isActive = pathname === item.href
@@ -57,19 +42,12 @@ export function AppSidebar({ userRole = "ambassador", className, onNavigate }: A
             <Link
               key={item.href}
               href={item.href}
-<<<<<<< HEAD
-=======
               onClick={onNavigate}
->>>>>>> 3ccef14 (update view profile)
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
                 isActive
                   ? "bg-primary text-primary-foreground"
-<<<<<<< HEAD
-                  : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-=======
                   : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
->>>>>>> 3ccef14 (update view profile)
               )}
             >
               <Icon className="h-4 w-4" />

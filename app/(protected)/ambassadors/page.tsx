@@ -8,10 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Search, Filter, MapPin, Calendar, Award } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-<<<<<<< HEAD
-=======
 import Link from "next/link"
->>>>>>> 3ccef14 (update view profile)
 
 interface Ambassador {
   id: string
@@ -316,17 +313,11 @@ export default function AmbassadorsPage() {
                 )}
               </div>
 
-<<<<<<< HEAD
-              <Button variant="outline" className="w-full mt-2 bg-transparent" size="sm">
-                View Profile
-              </Button>
-=======
               <Link href={`/ambassadors/${encodeURIComponent(ambassador.name)}`}>
                 <Button variant="outline" className="w-full mt-2 bg-transparent" size="sm">
                   View Profile
                 </Button>
               </Link>
->>>>>>> 3ccef14 (update view profile)
             </CardContent>
           </Card>
         ))}
